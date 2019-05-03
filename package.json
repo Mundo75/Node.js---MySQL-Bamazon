@@ -1,0 +1,25 @@
+{
+  "name": "Node.js---MySQL-Bamazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "customerApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mundo75/Node.js---MySQL-Bamazon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mundo75/Node.js---MySQL-Bamazon/issues"
+  },
+  "homepage": "https://github.com/Mundo75/Node.js---MySQL-Bamazon#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^6.3.1",
+    "mysql": "^2.17.1"
+  }
+}
