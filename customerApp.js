@@ -3,11 +3,11 @@ const inquirer = require("inquirer");
 
 let connection = mysql.createConnection({
 
-	host: 'localhost',
-	port: '3306',
-	user: 'root',
-	password: 'Redbird7821037*',
-	database: 'bamazon_db'
+	host: "localhost",
+	port: "3306",
+	user: "root",
+	password: "Redbird7821037*",
+	database: "bamazon_db"
 
 });
 connection.connect(function(err) {
