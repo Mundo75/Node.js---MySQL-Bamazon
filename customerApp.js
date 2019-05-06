@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 const inquirer = require("inquirer");
+require("console.table");
 
 let connection = mysql.createConnection({
 
@@ -28,13 +29,10 @@ function inventory() {
 
 			if (error) throw error;
 
-			for (let i = 0; i < customerTableInfo.length; i++) {
+			//for (let i = 0; i < customerTableInfo.length; i++) {
 
-				console.log("\nProduct item ID: " + customerTableInfo[i].item_id + "\nProduct Name: " + customerTableInfo[i].product_name + "\nPrice: $" + customerTableInfo[i].price);
-
-			};
-
-			console.log("\n=======NEW PURCHASE=======\n");
+			console.table(customerTableInfo);
+			console.log("\n=========WOULD YOU LIKE TO MAKE A NEW PURCHASE=========\n");
 
 			//Set up "customer" input using inquirer package to gather input info
 			let initialItemId = customerTableInfo[0].item_id;

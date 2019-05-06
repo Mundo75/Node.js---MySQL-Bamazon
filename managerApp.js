@@ -1,5 +1,6 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
+require("console.table");
 
 let connection = mysql.createConnection({
 
@@ -25,12 +26,12 @@ function mgrProfile() {
             type: "list",
 	      	message: "What would you like to do?",
 	      	choices: ["View Products in Inventory", "View Items With Low Inventory", "Add to Inventory", "Add A New Product"],
-            name: "mgrOpr"
+            name: "managerOptions"
         }
 
 	]).then(function(mgrTask) {
 
-		switch (mgrTask.mgrOpr) {
+		switch (mgrTask.managerOptions) {
 
 			case "View Products in Inventory":
 
@@ -57,7 +58,6 @@ function mgrProfile() {
 				break;
 
 		}
-
     });
 };
 
@@ -70,11 +70,8 @@ function viewInventory() {
 
 			if (error) throw error;
 
-			for (let i = 0; i < mgrTableInfo.length; i++) {
-
-				console.log("\nProduct item ID: " + mgrTableInfo[i].item_id + "\nProduct Name: " + mgrTableInfo[i].product_name + "\nPrice ($): " + mgrTableInfo[i].price + "\nQuantity: " + mgrTableInfo[i].stock_quantity);
-            };
-			connection.end();
+			    console.table(mgrTableInfo);
+				connection.end();
 
 		});
 };
@@ -90,7 +87,8 @@ function viewLowInventory() {
 
 			for (let i = 0; i < mgrTableInfo.length; i++) {
 
-				console.log("\nProduct item ID: " + mgrTableInfo[i].item_id + "\nProduct Name: " + mgrTableInfo[i].product_name + "\nPrice ($): " + mgrTableInfo[i].price + "\nQuantity: " + mgrTableInfo[i].stock_quantity);
+                
+                console.log("\nProduct item ID: " + mgrTableInfo[i].item_id + "\nProduct Name: " + mgrTableInfo[i].product_name + "\nPrice ($): " + mgrTableInfo[i].price + "\nQuantity: " + mgrTableInfo[i].stock_quantity);
             };
 			connection.end();
 
