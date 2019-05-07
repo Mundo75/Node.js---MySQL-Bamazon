@@ -49,6 +49,11 @@ ALTER TABLE departments MODIFY COLUMN over_head_costs FLOAT(10,2);
 
 UPDATE products SET product_sales = 0.00;
 UPDATE products SET stock_quantity = 12 where item_id = 1006;
+UPDATE departments SET over_head_costs = 620 WHERE department_id = 101;
+UPDATE departments SET over_head_costs = 1200 WHERE department_id = 100;
+UPDATE departments SET over_head_costs = 430 WHERE department_id = 102;
+UPDATE departments SET over_head_costs = 900 WHERE department_id = 103;
+UPDATE departments SET over_head_costs = 810 WHERE department_id = 104;
 
 SELECT * FROM products;
 SELECT * FROM departments;
